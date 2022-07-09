@@ -1,8 +1,8 @@
 package src.main.java.com;
 
 import src.main.java.com.model.Auto;
-import src.main.java.com.service.AutoService;
 import src.main.java.com.model.Motorbike;
+import src.main.java.com.service.AutoService;
 import src.main.java.com.service.MotorbikeService;
 
 import java.util.List;
