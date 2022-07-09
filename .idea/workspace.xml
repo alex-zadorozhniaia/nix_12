@@ -4,24 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53e99790-63e6-4664-89af-28a8f8b2ce1b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+    <list default="true" id="53e99790-63e6-4664-89af-28a8f8b2ce1b" name="Changes" comment="nix_12">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson10/src/main/java/com/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson10/src/main/java/com/model/Auto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson10/src/main/java/com/model/Manufacturer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson10/src/main/java/com/model/Motorbike.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson10/src/main/java/com/model/MotorbikeManufacturer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson10/src/main/java/com/model/MotorbikeVehicle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson10/src/main/java/com/model/Vehicle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson10/src/main/java/com/repository/AutoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson10/src/main/java/com/repository/CrudMotorbikeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson10/src/main/java/com/repository/CrudRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson10/src/main/java/com/repository/MotorbikeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson10/src/main/java/com/service/AutoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson10/src/main/java/com/service/MotorbikeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson10/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2BR9cZQHdxXJw1XCi8SnScc17yD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -32,9 +60,33 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/Игорь/IdeaProjects/nix_12",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Игорь\nix_12\lesson10\main\java\com\service" />
+      <recent name="C:\Users\Игорь\nix_12\lesson10\main\java\com\repository" />
+      <recent name="C:\Users\Игорь\nix_12\lesson10\main\java\com\model" />
+      <recent name="C:\Users\Игорь\nix_12\lesson10\main\java" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main1" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.Main" />
+      <module name="nix_12" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -56,5 +108,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
