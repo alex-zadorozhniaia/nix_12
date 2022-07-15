@@ -1,6 +1,6 @@
-package src.main.java.com.repository;
+package org.lesson10.repository;
 
-import src.main.java.com.model.Auto;
+import org.lesson10.model.Auto;
 
 import java.util.Iterator;
 import java.util.LinkedList;

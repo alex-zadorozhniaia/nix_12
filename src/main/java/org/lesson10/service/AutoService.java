@@ -1,8 +1,8 @@
-package src.main.java.com.service;
+package org.lesson10.service;
 
-import src.main.java.com.model.Auto;
-import src.main.java.com.model.Manufacturer;
-import src.main.java.com.repository.AutoRepository;
+import org.lesson10.repository.AutoRepository;
+import org.lesson10.model.Auto;
+import org.lesson10.model.Manufacturer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

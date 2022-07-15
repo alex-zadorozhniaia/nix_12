@@ -1,4 +1,4 @@
-package src.main.java.com.model;
+package org.lesson10.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,11 +7,13 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
-public class Motorbike extends MotorbikeVehicle {
+public class Motorbike extends Vehicle {
     private String bodyType;
+    private final MotorbikeManufacturer manufacturer;
 
-    public Motorbike(String model, MotorbikeManufacturer motorbikeManufacturer, BigDecimal price, String bodyType) {
-        super(model, motorbikeManufacturer, price);
+    public Motorbike(String model, MotorbikeManufacturer manufacturer, BigDecimal price, String bodyType) {
+        super(model, count, price);
+        this.manufacturer=manufacturer;
         this.bodyType = bodyType;
     }
 
@@ -22,7 +24,7 @@ public class Motorbike extends MotorbikeVehicle {
                 ", id='" + id + '\'' +
                 ", model='" + model + '\'' +
                 ", price=" + price +
-                ", manufacturer=" + motorbikeManufacturer +
+                ", manufacturer=" + manufacturer +
                 '}';
     }
 }

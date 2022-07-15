@@ -1,5 +1,6 @@
-package src.main.java.com.repository;
-import src.main.java.com.model.Motorbike;
+package org.lesson10.repository;
+import org.lesson10.model.Motorbike;
+
 import java.util.List;
 import java.util.Optional;
 

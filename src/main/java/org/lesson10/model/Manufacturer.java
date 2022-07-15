@@ -1,4 +1,4 @@
-package src.main.java.com.model;
+package org.lesson10.model;
 
 public enum Manufacturer {
     KIA, BMW, ZAZ, OPEL

@@ -1,8 +1,8 @@
-package src.main.java.com.repository;
+package org.lesson10.repository;
 
 
 
-import src.main.java.com.model.Motorbike;
+import org.lesson10.model.Motorbike;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -76,7 +76,7 @@ public class MotorbikeRepository implements CrudMotorbikeRepository {
 
         private static class MotorbikeCopy {
             static void copy(final Motorbike from, final Motorbike to) {
-                to.setMotorbikeManufacturer(from.getMotorbikeManufacturer());
+
                 to.setModel(from.getModel());
                 to.setBodyType(from.getBodyType());
                 to.setPrice(from.getPrice());

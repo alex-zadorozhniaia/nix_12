@@ -1,4 +1,4 @@
-package src.main.java.com.model;
+package org.lesson10.model;
 
 import lombok.Getter;
 import lombok.Setter;

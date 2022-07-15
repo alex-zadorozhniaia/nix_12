@@ -1,8 +1,8 @@
-package src.main.java.com.service;
+package org.lesson10.service;
 
-import src.main.java.com.model.Motorbike;
-import src.main.java.com.model.MotorbikeManufacturer;
-import src.main.java.com.repository.MotorbikeRepository;
+import org.lesson10.repository.MotorbikeRepository;
+import org.lesson10.model.Motorbike;
+import org.lesson10.model.MotorbikeManufacturer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +25,7 @@ public class MotorbikeService {
             for (int i = 0; i < count; i++) {
                 final Motorbike motorbike = new Motorbike(
                         "Model-" + RANDOM.nextInt(1000),
-                        getRandomMotorbikeManufacturer(),
+                        getRandomManufacturer(),
                         BigDecimal.valueOf(RANDOM.nextDouble(1000.0)),
                         "Model-" + RANDOM.nextInt(1000)
                 );
@@ -35,7 +35,7 @@ public class MotorbikeService {
             return result;
         }
 
-        private MotorbikeManufacturer getRandomMotorbikeManufacturer() {
+        private MotorbikeManufacturer getRandomManufacturer() {
             final MotorbikeManufacturer[] values = MotorbikeManufacturer.values();
             final int index = RANDOM.nextInt(values.length);
             return values[index];

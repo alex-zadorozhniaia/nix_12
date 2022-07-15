@@ -1,9 +1,10 @@
-package src.main.java.com;
+package org.lesson10;
 
-import src.main.java.com.model.Auto;
-import src.main.java.com.model.Motorbike;
-import src.main.java.com.service.AutoService;
-import src.main.java.com.service.MotorbikeService;
+
+import org.lesson10.service.MotorbikeService;
+import org.lesson10.model.Auto;
+import org.lesson10.model.Motorbike;
+import org.lesson10.service.AutoService;
 
 import java.util.List;
 
