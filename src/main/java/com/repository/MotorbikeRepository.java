@@ -10,6 +10,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public class MotorbikeRepository implements CrudMotorbikeRepository {
     private final List<Motorbike> moto;
@@ -29,6 +31,7 @@ public class MotorbikeRepository implements CrudMotorbikeRepository {
 
         @Override
         public List<Motorbike> getAll() {
+            Optional.ofNullable(null).or((Supplier<? extends Optional<?>>) moto);
             return moto;
         }
 
@@ -51,6 +54,7 @@ public class MotorbikeRepository implements CrudMotorbikeRepository {
         if (motorbike == null) {
             return false;
         }
+
         return moto.addAll(motorbike);
     }
     @Override
@@ -61,6 +65,7 @@ public class MotorbikeRepository implements CrudMotorbikeRepository {
 
         @Override
         public boolean create(List<Motorbike> motorbike) {
+
             return moto.addAll(motorbike);
         }
 

@@ -27,17 +27,19 @@ public class AutoRepository implements CrudRepository {
 
     @Override
     public List<Auto> getAll() {
+        Optional.ofNullable(autos).isPresent();
         return autos;
     }
 
     @Override
     public boolean save(Auto auto) {
         if (auto == null) {
-            throw new IllegalArgumentException("Auto must not be null");
+            Optional.ofNullable(auto).orElseThrow(IllegalAccessError::new);
         }
         if (auto.getPrice().equals(BigDecimal.ZERO)) {
             auto.setPrice(BigDecimal.valueOf(-1));
         }
+        
         autos.add(auto);
         return true;
     }
@@ -46,15 +48,18 @@ public class AutoRepository implements CrudRepository {
 
     @Override
     public boolean saveAll(List<Auto> auto) {
-        if (auto == null) {
+        if (auto != null) {
+            Optional.ofNullable(auto).orElse(null);
             return false;
         }
+
         return autos.addAll(auto);
     }
 
     @Override
     public boolean create(Auto auto) {
         autos.add(auto);
+        Optional.ofNullable(auto).orElseGet(null);
         return true;
     }
 
@@ -66,8 +71,10 @@ public class AutoRepository implements CrudRepository {
     @Override
     public boolean update(Auto auto) {
         final Auto founded = getById(auto.getId());
+
         if (founded != null) {
             AutoCopy.copy(auto, founded);
+
             return true;
         }
         return false;
@@ -76,10 +83,12 @@ public class AutoRepository implements CrudRepository {
     @Override
     public boolean delete(String id) {
         final Iterator<Auto> iterator = autos.iterator();
+
         while (iterator.hasNext()) {
             final Auto auto = iterator.next();
             if (auto.getId().equals(id)) {
                 iterator.remove();
+
                 return true;
             }
         }

@@ -9,12 +9,12 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 public class Motorbike extends Vehicle {
-    private Type bodyType;
+    private String bodyType;
 
 
-    public Motorbike(String model, MotorbikeManufacturer manufacturer, BigDecimal price, Type bodyType) {
+    public Motorbike(String model, MotorbikeManufacturer manufacturer, BigDecimal price, String bodyType) {
         super(model, price, manufacturer);
-        this.bodyType = (Type) bodyType;
+        this.bodyType = bodyType;
     }
 
     @Override

@@ -17,12 +17,14 @@ public abstract class Vehicle {
     protected Manufacturer manufacturer;
 
 
-    protected Vehicle(String model, BigDecimal price, Manufacturer count) {
+    protected Vehicle(String model, BigDecimal price, MotorbikeManufacturer manufacturer) {
         this.id = UUID.randomUUID().toString();
         this.model = model;
         this.count = count;
         this.price = price;
     }
+
+
 
     @Override
     public boolean equals(Object o) {
