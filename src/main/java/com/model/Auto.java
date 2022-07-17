@@ -1,4 +1,4 @@
-package org.lesson10.model;
+package com.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,8 +10,10 @@ import java.math.BigDecimal;
 public class Auto extends Vehicle {
     private String bodyType;
 
+
     public Auto(String model, Manufacturer manufacturer, BigDecimal price, String bodyType) {
-        super(model, manufacturer, price);
+        super(model, price, manufacturer);
+
         this.bodyType = bodyType;
     }
 
@@ -25,4 +27,6 @@ public class Auto extends Vehicle {
                 ", manufacturer=" + manufacturer +
                 '}';
     }
+
+
 }

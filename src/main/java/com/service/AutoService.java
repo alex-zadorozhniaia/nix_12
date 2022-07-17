@@ -1,8 +1,8 @@
-package org.lesson10.service;
+package com.service;
 
-import org.lesson10.repository.AutoRepository;
-import org.lesson10.model.Auto;
-import org.lesson10.model.Manufacturer;
+import com.repository.AutoRepository;
+import com.model.Auto;
+import com.model.Manufacturer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,11 +14,15 @@ public class AutoService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AutoService.class);
     private static final Random RANDOM = new Random();
-    private static final AutoRepository AUTO_REPOSITORY = new AutoRepository();
+    private final AutoRepository autoRepository;
 
 
+    public AutoService(AutoRepository autoRepository) {
+        this.autoRepository = autoRepository;
+    }
 
-    public List<Auto> createAutos(int count) {
+
+    public List<Auto> createAndSaveAutos(int count) {
         List<Auto> result = new LinkedList<>();
         for (int i = 0; i < count; i++) {
             final Auto auto = new Auto(
@@ -40,27 +44,41 @@ public class AutoService {
     }
 
     public void saveAutos(List<Auto> autos) {
-        AUTO_REPOSITORY.create(autos);
+        autoRepository.create(autos);
     }
 
     public void printAll() {
-        for (Auto auto : AUTO_REPOSITORY.getAll()) {
+        for (Auto auto : autoRepository.getAll()) {
             System.out.println(auto);
         }
     }
-        public void update(Auto auto){ AUTO_REPOSITORY.update(auto);}
+    public boolean update(Auto auto) {
+        if (auto.getPrice().equals(BigDecimal.ZERO)) {
+            auto.setPrice(BigDecimal.valueOf(-1));
+        }
+        if (auto.getManufacturer() == null) {
+            throw new IllegalArgumentException();
+        }
+        if (auto.getBodyType().equals("")) {
+            auto = autoRepository.findOneById(auto.getId()).orElseThrow(IllegalArgumentException::new);
+        }
+        return autoRepository.update(auto);
+    }
 
         public List<Auto> getAll(){
-            return AUTO_REPOSITORY.getAll();
+            return autoRepository.getAll();
         }
 
-        public Optional<Auto> findId(String id){
-            return AUTO_REPOSITORY.findId(id);
+        public Optional<Auto> findOneById(String id){
+            return autoRepository.findOneById(id);
         }
         public void delete(String id){
-            AUTO_REPOSITORY.delete(id);
+            autoRepository.delete(id);
         }
 
 
+    public Auto updateByBodyType() {
+        return null;
+    }
 }
 

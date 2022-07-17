@@ -1,9 +1,11 @@
-package org.lesson10.repository;
+package com.repository;
 
 
 
-import org.lesson10.model.Motorbike;
+import com.model.Auto;
+import com.model.Motorbike;
 
+import java.math.BigDecimal;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -30,7 +32,28 @@ public class MotorbikeRepository implements CrudMotorbikeRepository {
             return moto;
         }
 
-        @Override
+    @Override
+    public boolean save(Motorbike motorbike) {
+        if (motorbike == null) {
+            throw new IllegalArgumentException("Motorbike must not be null");
+        }
+        if (motorbike.getPrice().equals(BigDecimal.ZERO)) {
+            motorbike.setPrice(BigDecimal.valueOf(-1));
+        }
+        moto.add(motorbike);
+        return true;
+    }
+
+
+
+    @Override
+    public boolean saveAll(List<Motorbike> motorbike) {
+        if (motorbike == null) {
+            return false;
+        }
+        return moto.addAll(motorbike);
+    }
+    @Override
         public boolean create(Motorbike motorbike) {
             moto.add(motorbike);
             return true;
@@ -64,7 +87,7 @@ public class MotorbikeRepository implements CrudMotorbikeRepository {
             return false;
         }
     @Override
-    public Optional<Motorbike> findId(String id) {
+    public Optional<Motorbike> findOneById(String id) {
         Motorbike result = null;
         for (Motorbike motorbike : moto) {
             if (motorbike .getId().equals(id)) {
@@ -72,6 +95,14 @@ public class MotorbikeRepository implements CrudMotorbikeRepository {
             }
         }
         return Optional.ofNullable(result);
+    }
+    public boolean updateByBodyType(String bodyType, Motorbike copyFrom) {
+        for (Motorbike motorbike : moto) {
+            if (motorbike.getBodyType().equals(bodyType)) {
+                MotorbikeRepository.MotorbikeCopy.copy(copyFrom, motorbike);
+            }
+        }
+        return true;
     }
 
         private static class MotorbikeCopy {

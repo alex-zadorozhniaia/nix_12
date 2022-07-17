@@ -1,5 +1,5 @@
-package org.lesson10.repository;
-import org.lesson10.model.Motorbike;
+package com.repository;
+import com.model.Motorbike;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,6 +9,8 @@ public interface CrudMotorbikeRepository {
 
     List<Motorbike> getAll();
 
+    boolean save(Motorbike motorbike);
+    boolean saveAll(List<Motorbike> motorbike);
     boolean create(Motorbike motorbike);
 
     boolean create(List<Motorbike> motorbike);
@@ -16,5 +18,6 @@ public interface CrudMotorbikeRepository {
     boolean update(Motorbike motorbike);
 
     boolean delete(String id);
-    public Optional<Motorbike> findId(String id);
+    public Optional<Motorbike> findOneById(String id);
+
 }

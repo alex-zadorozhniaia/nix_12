@@ -1,8 +1,8 @@
-package org.lesson10.service;
+package com.service;
 
-import org.lesson10.repository.MotorbikeRepository;
-import org.lesson10.model.Motorbike;
-import org.lesson10.model.MotorbikeManufacturer;
+import com.repository.MotorbikeRepository;
+import com.model.Motorbike;
+import com.model.MotorbikeManufacturer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,17 +18,21 @@ public class MotorbikeService {
         private static final Logger LOGGER = LoggerFactory.getLogger(MotorbikeService.class);
         private static final Random RANDOM = new Random();
         private final MotorbikeRepository MOTORBIKE_REPOSITORY = new MotorbikeRepository();
+    private final MotorbikeRepository motorbikeRepository;
 
 
-        public List<Motorbike> createMoto(int count) {
+    public MotorbikeService(MotorbikeRepository motorbikeRepository) {
+        this.motorbikeRepository = motorbikeRepository;
+    }
+
+    public List<Motorbike> createMoto(int count) {
             List<Motorbike> result = new LinkedList<>();
             for (int i = 0; i < count; i++) {
                 final Motorbike motorbike = new Motorbike(
                         "Model-" + RANDOM.nextInt(1000),
                         getRandomManufacturer(),
                         BigDecimal.valueOf(RANDOM.nextDouble(1000.0)),
-                        "Model-" + RANDOM.nextInt(1000)
-                );
+                        "Model-" + RANDOM.nextInt(1000));
                 result.add(motorbike);
                 LOGGER.debug("Created motorbike {}", motorbike.getId());
             }
@@ -55,8 +59,8 @@ public class MotorbikeService {
         return MOTORBIKE_REPOSITORY.getAll();
     }
 
-    public Optional<Motorbike> findId(String id){
-        return MOTORBIKE_REPOSITORY.findId(id);
+    public Optional<Motorbike> findOneById(String id){
+        return MOTORBIKE_REPOSITORY.findOneById(id);
     }
     public void delete(String id){
         MOTORBIKE_REPOSITORY.delete(id);

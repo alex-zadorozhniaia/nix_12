@@ -1,6 +1,6 @@
-package org.lesson10.repository;
+package com.repository;
 
-import org.lesson10.model.Auto;
+import com.model.Auto;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,5 +21,6 @@ public interface CrudRepository {
     boolean update(Auto auto);
 
     boolean delete(String id);
-    Optional<Auto> findId(String id);
+
+    Optional<Auto> findOneById(String id);
 }
